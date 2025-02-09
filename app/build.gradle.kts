@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+
+    kotlin("plugin.serialization") version "2.1.0"
+    id("kotlin-kapt")
 }
 
 android {
@@ -56,4 +60,26 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Compose
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.coil)
+    implementation(libs.compose.coil.network)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.constraintlayout.compose)
+
+    //Ktor
+    implementation(libs.ktor.android)
+    implementation(libs.ktor.serialization)
+    implementation(libs.ktor.logging)
+    implementation(libs.ktor.json)
+    implementation(libs.ktor.content.negotiation)
+
+    //Serialization
+    implementation(libs.kotlin.serialization)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }
