@@ -1,13 +1,21 @@
 [versions]
-agp = "8.7.3"
+agp = "8.7.2"
 kotlin = "2.0.0"
-coreKtx = "1.15.0"
+coreKtx = "1.10.1"
 junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.10.0"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.8.0"
 composeBom = "2024.04.01"
+ktorVersion = "3.0.2"
+kotlinSerializationVersion = "1.7.3"
+hilt = "2.55"
+compose = "2.6.0"
+coil = "3.1.0"
+hiltNavigationCompose = "1.2.0"
+foundationAndroid = "1.7.7"
+constraintlayoutCompose = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,8 +33,27 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktorVersion" }
+ktor-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktorVersion" }
+ktor-logging = { group = "io.ktor", name = "ktor-client-logging-jvm", version.ref = "ktorVersion" }
+ktor-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
+ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorVersion" }
+
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerializationVersion" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+compose-coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+compose-coil-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayoutCompose" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
